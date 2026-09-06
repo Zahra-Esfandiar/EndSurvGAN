@@ -1,0 +1,7 @@
+dataset,method,ks_js,km_distance,c_index
+SUPPORT,SurvivalGAN,0.101,0.086,0.68
+SUPPORT,EndSurvGAN,0.082,0.061,0.71
+ACTG,SurvivalGAN,0.095,0.081,0.69
+ACTG,EndSurvGAN,0.078,0.058,0.72
+Rotterdam,SurvivalGAN,0.097,0.079,0.71
+Rotterdam,EndSurvGAN,0.081,0.063,0.74
