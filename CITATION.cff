@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+message: "If you use EndSurvGAN in your research, please cite this work."
+title: "EndSurvGAN: End-to-End Survival-Aware Generative Modeling of Censored Time-to-Event Data"
+type: software
+authors:
+  - family-names: Esfandiar
+    given-names: Zahra
