@@ -1,127 +1,169 @@
 # 🧬 EndSurvGAN
 
 <p align="center">
-  <b>End-to-End Survival-Aware Generative Modeling of Censored Time-to-Event Data</b>
+  <img src="https://img.shields.io/badge/Research-Survival%20Analysis-4B0082" />
+  <img src="https://img.shields.io/badge/AI-Generative%20Modeling-2563EB" />
+  <img src="https://img.shields.io/badge/Domain-Healthcare%20Data-0F766E" />
 </p>
+
+<h2 align="center">End-to-End Survival-Aware Generative Modeling of Censored Time-to-Event Data</h2>
 
 <p align="center">
-  Survival Analysis × Generative AI × Statistical Learning
+<b>Survival Analysis × Generative AI × Statistical Machine Learning</b>
 </p>
 
 ---
 
-## 📌 Overview
+## 🌟 Research Vision
 
-**EndSurvGAN** is an end-to-end survival-aware generative framework designed to generate realistic synthetic censored time-to-event datasets while preserving important survival-specific structures.
+Real-world healthcare datasets are often limited by privacy constraints, incomplete follow-up, and restricted accessibility. However, survival data contains complex structures that cannot be captured by conventional synthetic data generators.
 
-Unlike conventional tabular data generators that treat survival time and censoring indicators as ordinary variables, EndSurvGAN explicitly models the joint survival distribution and aims to preserve:
+**EndSurvGAN** introduces a survival-aware generative framework designed to create realistic synthetic censored time-to-event data while preserving essential survival characteristics.
 
-- Covariate distributions
-- Survival-time dynamics
-- Censoring mechanisms
-- Relationships between predictors and event times
-- Downstream predictive utility for survival models
-
-The project addresses a key challenge in biomedical and healthcare research: enabling privacy-aware data sharing and reproducible survival modeling when real patient-level datasets are limited.
+The goal is not only realistic feature generation, but preservation of the underlying survival mechanism.
 
 ---
 
-## 🎯 Research Motivation
+## 🎯 Problem Statement
 
-Survival datasets contain unique characteristics beyond standard tabular data:
+Standard synthetic tabular generators often ignore the unique nature of survival datasets:
 
-- Observed survival times
-- Event indicators
-- Right censoring mechanisms
-- Time-to-event dependencies
+- ⏳ Time-to-event dependency
+- 🚩 Event/censoring mechanisms
+- 📈 Survival distributions
+- 🧬 Predictor-event relationships
 
-A useful synthetic survival generator should preserve these structures rather than simply generate realistic-looking feature values.
-
-EndSurvGAN was developed to provide a unified survival-aware generative modeling approach.
+EndSurvGAN explicitly models these components through a unified probabilistic framework.
 
 ---
 
-## 🧠 Methodology
+## 🧠 Core Idea
 
-EndSurvGAN learns the joint distribution:
+The framework learns the joint distribution:
 
-\[
+$$
 P(X,T,\Delta)
-\]
+$$
 
 where:
 
-- **X** represents patient covariates
-- **T** represents observed survival time
-- **Δ** represents event/censoring indicator
+- **X** → patient-level covariates
+- **T** → observed survival time
+- **Δ** → event indicator
 
-The framework uses an adversarial learning architecture consisting of:
+The generated synthetic data aims to maintain:
 
-### Generator
-Generates synthetic survival samples:
-
-\[
-G(z)=(X^*,T^*,\Delta^*)
-\]
-
-### Discriminator
-Distinguishes real survival observations from generated samples.
+✅ Covariate distribution fidelity  
+✅ Survival-time dynamics  
+✅ Censoring behavior  
+✅ Downstream survival prediction performance
 
 ---
 
-## 🏗️ Model Contributions
+# 🏗️ Model Architecture
 
-Key methodological components:
+```
+Random Noise z
+      |
+      v
++-------------+
+| Generator   |
++-------------+
+      |
+      v
+Synthetic (X*, T*, Δ*)
+      |
+      v
++-----------------------+
+| Survival Constraints  |
+| Censoring Awareness   |
++-----------------------+
+      |
+      v
++-------------+
+| Discriminator|
++-------------+
+```
 
-✅ Survival-aware generative modeling  
-✅ Censoring-aware regularization  
-✅ WGAN-GP adversarial optimization  
-✅ Joint modeling of covariates, survival time, and censoring behavior  
-✅ Survival-specific evaluation framework
+The architecture combines adversarial learning with survival-specific objectives.
 
 ---
 
-## 📊 Evaluation Framework
+# 🔬 Methodological Contributions
 
-EndSurvGAN is evaluated using benchmark survival datasets:
+### Survival-Aware Generation
 
-| Dataset | Samples | Features | Censoring Rate |
+Models censored time-to-event data as a structured survival problem rather than ordinary tabular synthesis.
+
+### Censoring-Aware Learning
+
+Explicitly incorporates censoring information during training.
+
+### Adversarial Optimization
+
+Uses WGAN-GP inspired optimization for stable generative learning.
+
+### Survival-Specific Evaluation
+
+Evaluates whether synthetic data remains useful for downstream survival analysis.
+
+---
+
+# 📊 Experimental Evaluation
+
+Benchmark datasets:
+
+| Dataset | Samples | Features | Censoring |
 |---|---:|---:|---:|
 | SUPPORT | 9,105 | 14 | 32% |
 | ACTG | 2,467 | 17 | 64% |
 | Rotterdam | 2,982 | 7 | 57% |
 
-Evaluation metrics include:
+Evaluation framework:
 
-- Distributional fidelity
-- Kaplan–Meier curve alignment
-- Survival model predictive utility
+- Kaplan–Meier curve comparison
+- Distributional similarity
+- Survival prediction utility
 - Concordance Index (C-index)
-- Ablation analysis
+- Ablation studies
 
 ---
 
-## 🔬 Technical Implementation
+# ⚙️ Technical Stack
 
-Implemented using:
-
-- Python
-- PyTorch
-- Deep Neural Networks
-- Statistical Survival Analysis
-- Computational Statistics
-
-The implementation includes:
-
-- Generator and discriminator architectures
-- Custom survival-aware loss functions
-- Training pipeline
-- Validation pipeline
-- Survival-specific evaluation tools
+| Area | Tools |
+|---|---|
+| Language | Python |
+| Deep Learning | PyTorch |
+| Statistics | Survival Analysis |
+| Modeling | Generative Neural Networks |
+| Evaluation | Statistical Validation |
 
 ---
 
-## 📄 Research Publication Status
+# 📁 Project Structure
+
+```text
+EndSurvGAN/
+│
+├── README.md
+├── CITATION.cff
+├── ARCHITECTURE.md
+├── requirements.txt
+│
+├── src/
+│   ├── models/
+│   ├── losses/
+│   ├── training/
+│   └── evaluation/
+│
+├── experiments/
+└── results/
+```
+
+---
+
+# 📄 Research Status
 
 **EndSurvGAN: End-to-End Survival-Aware Generative Modeling of Censored Time-to-Event Data**
 
@@ -130,26 +172,24 @@ The implementation includes:
 
 ---
 
-## 🚀 Future Directions
+# 🚀 Future Research Directions
 
-Potential extensions include:
-
-- Competing-risk survival generation
-- Recurrent-event modeling
-- Privacy-preserving synthetic healthcare data
-- Uncertainty-aware survival modeling
+- Competing-risk synthetic survival generation
+- Recurrent event modeling
+- Privacy-preserving healthcare AI
+- Uncertainty-aware survival generation
+- Integration with large-scale clinical datasets
 
 ---
 
-## 👩‍🔬 Author
+# 👩‍🔬 Author
 
 **Zahra Esfandiar**  
 Statistics & Data Science Researcher
 
-Research interests:
+Research Interests:
 
-- Survival Analysis
-- Biostatistics
-- Statistical Machine Learning
-- Healthcare AI
-- Generative Modeling
+🧬 Survival Analysis  
+🏥 Biostatistics & Healthcare AI  
+📊 Statistical Machine Learning  
+🤖 Generative Modeling
