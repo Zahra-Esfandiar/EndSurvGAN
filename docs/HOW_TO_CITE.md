@@ -8,6 +8,10 @@ Zahra Esfandiar.
 
 Accepted as an **Oral Presentation** at the **18th Iranian Statistics Conference (2026)**.
 
+## Conference Material
+
+- [`Conference Summary PDF`](../paper/Summary-Isc18ZahraEsfandiar.pdf)
+
 ---
 
 ## Research Area
