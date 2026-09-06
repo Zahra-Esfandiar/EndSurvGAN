@@ -1,13 +1,13 @@
 # 📄 Research Paper Materials
 
-This directory contains research documents related to EndSurvGAN.
+This directory contains conference and research materials related to **EndSurvGAN**.
 
-Upload:
-- Project summary PDF
-- Conference booklet
-- Presentation materials
-- Supplementary documents
+## Available Material
 
-Suggested file:
+- 📄 [`Summary-Isc18ZahraEsfandiar.pdf`](Summary-Isc18ZahraEsfandiar.pdf) — conference summary for *EndSurvGAN: End-to-End Survival-Aware Generative Modeling of Censored Time-to-Event Data*
 
-`EndSurvGAN_Summary.pdf`
+## Research Status
+
+🏆 **Accepted as an Oral Presentation** at the **18th Iranian Statistics Conference (2026)**.
+
+Additional conference or supplementary materials can be added here as they become available.
