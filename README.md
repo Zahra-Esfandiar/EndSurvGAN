@@ -12,6 +12,12 @@
 
 ---
 
+<p align="center">
+<img src="assets/architecture.svg" width="750" />
+</p>
+
+---
+
 ## 🌟 Research Vision
 
 EndSurvGAN is a survival-aware generative framework designed to generate realistic synthetic censored time-to-event data while preserving essential survival structures.
@@ -36,8 +42,6 @@ The project aims to support privacy-aware and reproducible healthcare analytics 
 📄 Presentation topic:
 **End-to-End Survival-Aware Generative Modeling of Censored Time-to-Event Data**
 
-This work explores the integration of survival analysis principles with generative modeling for complex healthcare time-to-event data.
-
 ---
 
 ## 🧠 Core Idea
@@ -52,39 +56,25 @@ where:
 - **T** → observed survival time
 - **Δ** → event indicator
 
-The generated data aims to preserve:
-
-✅ Covariate fidelity  
-✅ Survival-time characteristics  
-✅ Censoring behavior  
-✅ Predictive usefulness
-
 ---
 
-## 🏗️ Model Overview
+## ⚡ Quick Start
 
-```
-Random Noise z
-      |
-      v
-Generator Network
-      |
-      v
-Synthetic (X*, T*, Δ*)
-      |
-      v
-Survival-aware Constraints
-      |
-      v
-Discriminator Network
+A reproducible workflow:
+
+```text
+1. Prepare survival dataset
+          ↓
+2. Define X, T, Δ representation
+          ↓
+3. Configure EndSurvGAN parameters
+          ↓
+4. Train survival-aware generator
+          ↓
+5. Evaluate synthetic survival data
 ```
 
-Main components:
-
-- Survival-aware generation
-- Censoring-aware learning
-- WGAN-GP optimization
-- Survival-specific validation
+See `QUICKSTART.md` for the project workflow.
 
 ---
 
