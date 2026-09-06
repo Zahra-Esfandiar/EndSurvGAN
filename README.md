@@ -41,6 +41,11 @@ The project aims to support privacy-aware and reproducible healthcare analytics 
 
 **Presentation:** *EndSurvGAN: End-to-End Survival-Aware Generative Modeling of Censored Time-to-Event Data*
 
+### 📄 Conference Material
+
+- [`Conference Summary PDF`](paper/Summary-Isc18ZahraEsfandiar.pdf)
+- [`Paper Materials`](paper/README.md)
+
 ---
 
 ## 🧠 Core Idea
@@ -184,6 +189,9 @@ EndSurvGAN/
 ├── experiments/
 ├── notebooks/
 │   └── 01_EndSurvGAN_demo.ipynb
+├── paper/
+│   ├── README.md
+│   └── Summary-Isc18ZahraEsfandiar.pdf
 ├── results/
 │   ├── benchmark_results.csv
 │   └── ablation_results.csv
