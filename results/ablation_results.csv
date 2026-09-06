@@ -1,0 +1,5 @@
+model_variant,c_index
+Two-Stage Generator,0.67
+EndSurvGAN without Censoring Loss,0.69
+EndSurvGAN without Survival Loss,0.68
+Full EndSurvGAN,0.71
