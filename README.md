@@ -50,7 +50,7 @@ The project aims to support privacy-aware and reproducible healthcare analytics 
 
 ## 🧠 Core Idea
 
-The framework learns the joint survival distribution:
+The framework targets the joint survival distribution:
 
 $$P(X,T,\Delta)$$
 
@@ -60,7 +60,7 @@ where:
 - **T** → observed survival time
 - **Δ** → event indicator
 
-The research objective combines adversarial learning with survival-aware and censoring-aware regularization:
+The documented research objective is:
 
 $$L_{total}=L_{adv}+\lambda_{surv}L_{surv}+\lambda_{cens}L_{cens}$$
 
@@ -77,15 +77,17 @@ pip install -r requirements.txt
 jupyter notebook notebooks/01_EndSurvGAN_demo.ipynb
 ```
 
-The demo notebook provides a minimal model forward pass and loads the reported benchmark/ablation tables. Full conference reproduction additionally requires the original benchmark preprocessing and experiment configuration.
+The demo notebook provides a minimal model forward pass and loads the reported benchmark/ablation tables.
+
+> **Reproducibility note:** the public code currently provides a transparent research scaffold aligned with the documented architecture. Full conference reproduction additionally requires the original dataset preprocessing, experiment configuration, and complete survival-consistency regularization used in the research workflow.
 
 See [`QUICKSTART.md`](QUICKSTART.md) for the workflow.
 
 ---
 
-## 🏗️ Research Implementation
+## 🏗️ Public Research Scaffold
 
-The repository now includes executable research scaffolding aligned with the documented EndSurvGAN design:
+The repository includes executable components aligned with the documented EndSurvGAN design:
 
 ```text
 src/
@@ -99,15 +101,17 @@ src/
     └── metrics.py
 ```
 
-Implemented components include:
+Current public components include:
 
 - Fully connected Generator and Discriminator
 - WGAN critic/generator objectives
 - Gradient penalty
-- Censoring-rate KL regularization utility
+- Censoring-rate regularization utility
 - Reproducible training configuration
 - Kaplan–Meier distance evaluation
 - Distributional diagnostic helpers
+
+The full research workflow contains additional experiment-level survival-consistency logic beyond this public scaffold.
 
 ---
 
@@ -123,7 +127,7 @@ Benchmark datasets:
 
 ### Reported benchmark results
 
-| Dataset | Method | KS/JS ↓ | KM-Distance ↓ | C-index ↑ |
+| Dataset | Method | Distribution Fidelity ↓ | KM-Distance ↓ | C-index ↑ |
 |---|---|---:|---:|---:|
 | SUPPORT | SurvivalGAN | 0.101 | 0.086 | 0.68 |
 | SUPPORT | **EndSurvGAN** | **0.082** | **0.061** | **0.71** |
@@ -131,6 +135,8 @@ Benchmark datasets:
 | ACTG | **EndSurvGAN** | **0.078** | **0.058** | **0.72** |
 | Rotterdam | SurvivalGAN | 0.097 | 0.079 | 0.71 |
 | Rotterdam | **EndSurvGAN** | **0.081** | **0.063** | **0.74** |
+
+The first metric is intentionally labeled generically here because the public conference summary reports it as a distribution-fidelity quantity; the repository does not relabel it as a specific divergence statistic without the original experiment specification.
 
 Machine-readable results: [`results/benchmark_results.csv`](results/benchmark_results.csv)
 
