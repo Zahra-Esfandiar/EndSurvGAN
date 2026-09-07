@@ -5,3 +5,17 @@ type: software
 authors:
   - family-names: Esfandiar
     given-names: Zahra
+repository-code: "https://github.com/Zahra-Esfandiar/EndSurvGAN"
+url: "https://github.com/Zahra-Esfandiar/EndSurvGAN"
+abstract: >-
+  EndSurvGAN is a survival-aware generative modeling framework for synthetic
+  censored time-to-event data. The work combines adversarial learning with
+  survival- and censoring-aware objectives and was accepted as an oral
+  presentation at the 18th Iranian Statistics Conference (2026).
+keywords:
+  - survival analysis
+  - censored data
+  - generative modeling
+  - statistical machine learning
+  - synthetic data
+  - healthcare data
